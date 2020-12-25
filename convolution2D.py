@@ -56,14 +56,14 @@ file=open('./weights.txt','w')
 for v in model.trainable_variables:
     file.write(str(v.name)+'\n')
     file.write(str(v.shape)+'\n')
-    file.write(str)(v.numpy()+'\n')
+    file.write(str(v.numpy())+'\n')
 file.close()
 
-acc=history.history(['sparse_categorical_accuracy'])
-val_acc=history.history(['val_sparse_categorical_accuracy'])
+acc=history.history['sparse_categorical_accuracy']
+val_acc=history.history['val_sparse_categorical_accuracy']
 
-loss=history.history(['loss'])
-val_loss=history.history(['val_loss'])
+loss=history.history['loss']
+val_loss=history.history['val_loss']
 
 plt.subplot(1,2,1)
 plt.plot(acc,label='acc')
